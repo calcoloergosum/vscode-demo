@@ -17,5 +17,5 @@ def test_wrong_type():
 
 def test_wrong_range():
     """Test it outputs right type of error"""
-    with pytest.raises(RuntimeError):
+    with pytest.raises(ValueError):
         assert factorial(-1)

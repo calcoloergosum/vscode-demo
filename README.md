@@ -4,5 +4,5 @@
 
 - [x] Make git repo for demo
 - [x] Practice presentation
-- [x] Screen keymap shower (https://github.com/Code52/carnac/releases/)
+- [x] Screen keymap shower: [Carnac](https://github.com/Code52/carnac/releases/)
 - [ ] Do presentation
