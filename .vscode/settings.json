@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "~/Anaconda3/envs/blackjack/python.exe",
+    "python.linting.pylintEnabled": true,
+    "files.watcherExclude": {
+        ".mypy_cache": true,
+        ".pytest_cache": true
+    },
+    "files.exclude": {
+        ".mypy_cache": true,
+        ".pytest_cache": true
+    }
+}

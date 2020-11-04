@@ -1,0 +1,58 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "styling on source code",
+            "type": "shell",
+            "command": "${config:python.pythonPath} -m pylint factorial --rcfile=${workspaceRoot}/.pylintrc",
+            "options": {"env": {"PYTHONPATH": "{workspaceRoot}"}},
+            "group": "test",
+        },
+        {
+            "label": "styling on test code",
+            "type": "shell",
+            "command": "${config:python.pythonPath} -m pylint tests --rcfile=${workspaceRoot}/.pylintrc",
+            "options": {"env": {"PYTHONPATH": "{workspaceRoot}"}},
+            "group": "test",
+        },
+        {
+            "label": "typing on source code",
+            "type": "shell",
+            "command": "${config:python.pythonPath} -m mypy factorial --strict",
+            "options": {"env": {"PYTHONPATH": "{workspaceRoot}"}},
+            "group": "test",
+        },
+        {
+            "label": "typing on test code",
+            "type": "shell",
+            "command": "${config:python.pythonPath} -m mypy tests",
+            "options": {"env": {"PYTHONPATH": "{workspaceRoot}"}},
+            "group": "test",
+        },
+        {
+            "label": "dynamic test",
+            "type": "shell",
+            "command": "${config:python.pythonPath} -m pytest tests -x -s",
+            "options": {"env": {
+                "PYTHONPATH": "{workspaceRoot}",
+                "PATH": "C:/Users/thest/Anaconda3/envs/blackjack/Scripts"
+            }},
+            "group": "test",
+        },
+        {
+            "label": "Test Task",
+            "type": "shell",
+            "command": "echo 'All test passed'",
+            "options": {"env": {"PYTHONPATH": "{workspaceRoot}"}},
+            "group": {"kind": "build", "isDefault": true},
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "styling on source code", "styling on test code",
+                "typing on source code", "typing on test code",
+                "dynamic test",
+            ]
+        },
+    ]
+}
