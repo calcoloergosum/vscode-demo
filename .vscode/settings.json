@@ -8,5 +8,7 @@
     "files.exclude": {
         ".mypy_cache": true,
         ".pytest_cache": true
-    }
+    },
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
 }
